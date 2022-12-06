@@ -8,7 +8,7 @@ interface Assignment {
 
 export default class ConcretePuzzle extends Puzzle {
   public solveFirst(): string {
-    readFile('./src/days/3/input.txt').then((input) => this.setInput(input));
+    readFile('./src/days/4/input.txt').then((input) => this.setInput(input));
 
     const pairs = this.input.split('\n');
 
@@ -45,7 +45,7 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   public solveSecond(): string {
-    readFile('./src/days/3/input.txt').then((input) => this.setInput(input));
+    readFile('./src/days/4/input.txt').then((input) => this.setInput(input));
 
     const pairs = this.input.split('\n');
 
