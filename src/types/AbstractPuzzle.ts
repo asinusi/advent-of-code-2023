@@ -8,7 +8,5 @@ export default abstract class Puzzle implements PuzzleInterface {
   }
 
   public abstract solveFirst(): string;
-  public abstract getFirstExpectedResult(): string;
   public abstract solveSecond(): string;
-  public abstract getSecondExpectedResult(): string;
 }
