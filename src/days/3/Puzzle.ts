@@ -1,10 +1,7 @@
 import Puzzle from '../../types/AbstractPuzzle';
-import readFile from '../../utils/readFile';
 
 export default class ConcretePuzzle extends Puzzle {
   public solveFirst(): string {
-    readFile('./src/days/3/input.txt').then((input) => this.setInput(input));
-
     const rucksacks = this.input.split('\n');
 
     // Hold record of any letters that are in both compartments
@@ -55,8 +52,6 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   public solveSecond(): string {
-    readFile('./src/days/3/input.txt').then((input) => this.setInput(input));
-
     const rucksacks = this.input.split('\n');
 
     // Hold record of any letters that are in both compartments

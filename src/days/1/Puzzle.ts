@@ -1,11 +1,7 @@
 import Puzzle from '../../types/AbstractPuzzle';
-import readFile from '../../utils/readFile';
 
 export default class ConcretePuzzle extends Puzzle {
-  
   private getTotalCalories() {
-    readFile('src/days/1/input.txt').then((input) => this.setInput(input));
-    
     const calories = this.input.split('\r\n');
     const totalCalories: number[] = [];
     let total = 0;
@@ -18,14 +14,14 @@ export default class ConcretePuzzle extends Puzzle {
         total += parseInt(calorie);
       }
     }
-  
+
     totalCalories.push(total);
 
     return totalCalories;
   }
   public solveFirst(): string {
     const totalCalories = this.getTotalCalories();
-    
+
     return Math.max(...totalCalories).toString();
   }
   public solveSecond(): string {

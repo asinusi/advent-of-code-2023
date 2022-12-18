@@ -1,5 +1,4 @@
 import Puzzle from '../../types/AbstractPuzzle';
-import readFile from '../../utils/readFile';
 
 interface Assignment {
   start: number;
@@ -8,8 +7,6 @@ interface Assignment {
 
 export default class ConcretePuzzle extends Puzzle {
   public solveFirst(): string {
-    readFile('./src/days/4/input.txt').then((input) => this.setInput(input));
-
     const pairs = this.input.split('\n');
 
     // Check if each pair overlaps the assignments
@@ -45,8 +42,6 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   public solveSecond(): string {
-    readFile('./src/days/4/input.txt').then((input) => this.setInput(input));
-
     const pairs = this.input.split('\n');
 
     // Check if each pair overlaps the assignments

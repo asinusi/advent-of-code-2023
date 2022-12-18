@@ -1,5 +1,4 @@
 import Puzzle from '../../types/AbstractPuzzle';
-import readFile from '../../utils/readFile';
 
 interface Instruction {
   type: 'noop' | 'addx';
@@ -71,7 +70,6 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   private readProgram() {
-    readFile('./src/days/10/input.txt').then((input) => this.setInput(input));
     return this.input.split('\n').map((x) => {
       const tmp = x.split(' ');
       return {

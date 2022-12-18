@@ -1,10 +1,7 @@
 import Puzzle from '../../types/AbstractPuzzle';
-import readFile from '../../utils/readFile';
 
 export default class ConcretePuzzle extends Puzzle {
   public solveFirst(): string {
-    readFile('./src/days/6/input.txt').then((input) => this.setInput(input));
-
     const stream = this.input;
     let marker: number;
     for (let i = 0; i < stream.length; i++) {
@@ -26,8 +23,6 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   public solveSecond(): string {
-    readFile('./src/days/6/input.txt').then((input) => this.setInput(input));
-
     const stream = this.input;
     let marker: number;
     for (let i = 0; i < stream.length; i++) {

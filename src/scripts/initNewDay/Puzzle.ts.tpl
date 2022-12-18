@@ -1,5 +1,4 @@
 import Puzzle from '../../types/AbstractPuzzle';
-import readFile from '../../utils/readFile';
 
 export default class ConcretePuzzle extends Puzzle {
   public solveFirst(): string {

@@ -1,5 +1,4 @@
 import Puzzle from '../../types/AbstractPuzzle';
-import readFile from '../../utils/readFile';
 
 interface CrateInstruction {
   amount: number;
@@ -58,8 +57,6 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   public solveFirst(): string {
-    readFile('./src/days/5/input.txt').then((input) => this.setInput(input));
-
     const instructions = this.input.split('\n');
     // console.log(instructions[3].split(' '));
     // Read down until we get to our first instruction
@@ -112,8 +109,6 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   public solveSecond(): string {
-    readFile('./src/days/5/input.txt').then((input) => this.setInput(input));
-
     const instructions = this.input.split('\n');
     // console.log(instructions[3].split(' '));
     // Read down until we get to our first instruction

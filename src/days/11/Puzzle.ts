@@ -1,5 +1,4 @@
 import Puzzle from '../../types/AbstractPuzzle';
-import readFile from '../../utils/readFile';
 
 type ArithmeticOperator = '+' | '-' | '*' | '/';
 
@@ -103,7 +102,6 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   private getMonkeyInput() {
-    readFile('./src/days/10/input.txt').then((input) => this.setInput(input));
     const rows = this.input.split('\n');
     const monkeys: Monkey[] = [];
     let row = 0;

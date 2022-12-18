@@ -1,5 +1,4 @@
 import Puzzle from '../../types/AbstractPuzzle';
-import readFile from '../../utils/readFile';
 
 export default class ConcretePuzzle extends Puzzle {
   private getShapeValue(shape: string) {
@@ -15,8 +14,6 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   public solveFirst(): string {
-    readFile('./input.txt').then((input) => this.setInput(input));
-
     const rounds = this.input.split('\n');
     let total = 0;
     for (const round of rounds) {
@@ -46,8 +43,6 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   public solveSecond(): string {
-    readFile('./input.txt').then((input) => this.setInput(input));
-
     const rounds = this.input.split('\n');
     // console.log(test.length);
     // const rounds = test.slice(0, 4);

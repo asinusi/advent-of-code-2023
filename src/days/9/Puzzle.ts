@@ -1,5 +1,4 @@
 import Puzzle from '../../types/AbstractPuzzle';
-import readFile from '../../utils/readFile';
 
 type Direction = 'U' | 'D' | 'L' | 'R';
 
@@ -121,7 +120,6 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   private getMotions() {
-    readFile('./src/days/9/input.txt').then((input) => this.setInput(input));
     return this.input.split('\n').map((x) => {
       const line = x.split(' ');
       return {

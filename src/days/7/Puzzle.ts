@@ -1,5 +1,4 @@
 import Puzzle from '../../types/AbstractPuzzle';
-import readFile from '../../utils/readFile';
 
 interface FileInfo {
   name: string;
@@ -95,7 +94,6 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   private getFiles() {
-    readFile('./src/days/7/input.txt').then((input) => this.setInput(input));
     const files: FileInfo[] = [];
     // Manually create first node
     files.push({ name: '/', size: null, parent: null, children: [] });

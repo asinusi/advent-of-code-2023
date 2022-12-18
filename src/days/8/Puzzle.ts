@@ -1,5 +1,4 @@
 import Puzzle from '../../types/AbstractPuzzle';
-import readFile from '../../utils/readFile';
 
 export default class ConcretePuzzle extends Puzzle {
   grid: number[][];
@@ -91,8 +90,6 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   private getTreeGrid() {
-    readFile('./src/days/8/input.txt').then((input) => this.setInput(input));
-
     // Create a 2d array to loop through
     // All trees from the edges are automatically visible
     // Check each side if the tree is shorter
