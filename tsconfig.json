@@ -6,7 +6,8 @@
     "preserveConstEnums": true,
     "sourceMap": false,
     "outDir": "dist",
-    "target": "ES6"
+    "target": "ES6",
+    "lib": ["ES2023"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "**/*.spec.ts", "src/scripts/**/*"]
