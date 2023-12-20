@@ -28,14 +28,12 @@ export default class ConcretePuzzle extends Puzzle {
   steps: number;
   tracker: [number, number][] = [];
 
-  private init() {
+  public override init(): void {
     this.pipes = this.input.split('\n').map((x) => x.split(''));
     this.width = this.pipes[0].length;
     this.height = this.pipes.length;
     this.start = this.getStartPosition();
-    this.loop = new Array(this.height)
-      .fill(0)
-      .map(() => new Array(this.width).fill(false));
+    this.loop = new Array(this.height).fill(0).map(() => new Array(this.width).fill(false));
     this.steps = this.getSteps();
   }
 
@@ -83,12 +81,7 @@ export default class ConcretePuzzle extends Puzzle {
     return step / 2;
   }
 
-  private canTraverse(
-    prevX: number,
-    prevY: number,
-    x: number,
-    y: number
-  ): boolean {
+  private canTraverse(prevX: number, prevY: number, x: number, y: number): boolean {
     // Determine which pathways can be taken and traverse each one
     if (x < 0 || x >= this.width || y < 0 || y >= this.height) {
       return false;
@@ -136,31 +129,19 @@ export default class ConcretePuzzle extends Puzzle {
   private traverse(prev: Position, pos: Position): Position {
     // Look in each direction and attempt traversal
     // West
-    if (
-      prev.x !== pos.x - 1 &&
-      this.canTraverse(pos.x, pos.y, pos.x - 1, pos.y)
-    ) {
+    if (prev.x !== pos.x - 1 && this.canTraverse(pos.x, pos.y, pos.x - 1, pos.y)) {
       return { x: pos.x - 1, y: pos.y };
     }
     // East
-    if (
-      prev.x !== pos.x + 1 &&
-      this.canTraverse(pos.x, pos.y, pos.x + 1, pos.y)
-    ) {
+    if (prev.x !== pos.x + 1 && this.canTraverse(pos.x, pos.y, pos.x + 1, pos.y)) {
       return { x: pos.x + 1, y: pos.y };
     }
     // South
-    if (
-      prev.y !== pos.y + 1 &&
-      this.canTraverse(pos.x, pos.y, pos.x, pos.y + 1)
-    ) {
+    if (prev.y !== pos.y + 1 && this.canTraverse(pos.x, pos.y, pos.x, pos.y + 1)) {
       return { x: pos.x, y: pos.y + 1 };
     }
     // North
-    if (
-      prev.y !== pos.y - 1 &&
-      this.canTraverse(pos.x, pos.y, pos.x, pos.y - 1)
-    ) {
+    if (prev.y !== pos.y - 1 && this.canTraverse(pos.x, pos.y, pos.x, pos.y - 1)) {
       return { x: pos.x, y: pos.y - 1 };
     }
 
@@ -168,16 +149,11 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   public solveFirst(): string {
-    this.init();
     // WRITE SOLUTION FOR TEST 1
     return this.steps.toString();
   }
 
-  private isInLoop(
-    x: number,
-    y: number,
-    direction: 'left' | 'right' | 'up' | 'down'
-  ) {
+  private isInLoop(x: number, y: number, direction: 'left' | 'right' | 'up' | 'down') {
     // If a tile is on the edge we assume it is part of the loop for
     if (
       (direction === 'left' && x === 0) ||
@@ -223,7 +199,6 @@ export default class ConcretePuzzle extends Puzzle {
   }
 
   public solveSecond(): string {
-    this.init();
     // console.log(this.tracker);
     // Get the max and min of each axis
     this.tracker.sort((a, b) => {
