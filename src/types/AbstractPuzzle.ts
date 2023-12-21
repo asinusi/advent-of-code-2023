@@ -10,6 +10,6 @@ export default abstract class Puzzle implements PuzzleInterface {
 
   public init(): void {}
 
-  public abstract solveFirst(): string;
-  public abstract solveSecond(): string;
+  public abstract solveFirst(): string | number;
+  public abstract solveSecond(): string | number;
 }
